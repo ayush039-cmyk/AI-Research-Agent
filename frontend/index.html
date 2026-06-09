@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Agent</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="landing">
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-mark">RA</div>
+        <span>AI Research Agent</span>
+      </div>
+      <div>
+        <a class="btn btn-secondary" href="/login">Log in</a>
+        <a class="btn btn-primary" href="/signup" style="margin-left: 0.5rem;">Sign up</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Research smarter with an agent that reads papers, searches the web, and writes reports.</h1>
+        <p>
+          Ask questions about AI research, ArXiv papers, and technical topics. The agent pulls from
+          your vector knowledge base, fetches ArXiv abstracts, runs web search, and synthesizes a
+          structured research report.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/signup">Start researching</a>
+          <a class="btn btn-secondary" href="/login">Continue to chat</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What it can do</h3>
+        <ul>
+          <li>Summarize ArXiv papers by ID</li>
+          <li>Search embedded research chunks via Pinecone RAG</li>
+          <li>Fetch live web results for broader context</li>
+          <li>Produce introduction, findings, conclusion, and sources</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="feature-grid">
+      <article class="feature-card">
+        <h4>RAG over papers</h4>
+        <p>Semantic search across chunked ArXiv PDFs stored in Pinecone.</p>
+      </article>
+      <article class="feature-card">
+        <h4>Multi-tool agent</h4>
+        <p>LangGraph navigator decides when to search, fetch, or finalize answers.</p>
+      </article>
+      <article class="feature-card">
+        <h4>Chat history</h4>
+        <p>Save conversations, revisit past research, and continue where you left off.</p>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

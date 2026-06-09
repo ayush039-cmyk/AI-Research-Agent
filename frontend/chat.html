@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat | AI Research Agent</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="chat-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-mark">RA</div>
+          <span>Research Agent</span>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <button id="new-chat-btn" class="btn btn-primary" type="button">+ New chat</button>
+        <button id="logout-btn" class="btn btn-secondary" type="button">Log out</button>
+      </div>
+
+      <div id="history-list" class="history-list"></div>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-header">
+        <div>
+          <h2 id="chat-title">Research chat</h2>
+          <span id="user-chip" class="user-chip"></span>
+        </div>
+        <button id="delete-chat-btn" class="btn btn-danger" type="button" hidden>Delete chat</button>
+      </header>
+
+      <section id="messages" class="messages">
+        <div class="empty-state" id="empty-state">
+          <h3>Ask your first research question</h3>
+          <p>
+            Try: "Summarize ArXiv paper 2502.20384" or "What are recent advances in transformer attention?"
+          </p>
+        </div>
+      </section>
+
+      <div class="composer">
+        <div id="typing-indicator" class="typing-indicator">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          Research agent is working...
+        </div>
+        <form id="chat-form">
+          <textarea id="message-input" rows="2" placeholder="Ask a research question..." required></textarea>
+          <button id="send-btn" class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/chat.js"></script>
+</body>
+</html>
