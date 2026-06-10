@@ -6,12 +6,13 @@ from sqlalchemy.orm import DeclarativeBase, relationship, sessionmaker
 
 from paths import DATA_DIR
 
-DEFAULT_DB_PATH = os.path.join(DATA_DIR, 'research_agent.db')
-DATABASE_URL = os.getenv('DATABASE_URL', f'sqlite:///{DEFAULT_DB_PATH}')
+DATABASE_URL = os.getenv('DATABASE_URL')
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL environment variable not set")
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={'check_same_thread': False} if DATABASE_URL.startswith('sqlite') else {},
+    connect_args={},
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
