@@ -5,7 +5,6 @@ langchain-groq
 python-dotenv
 pypdf
 requests
-semantic_router
 pinecone
 serpapi
 google-search-results
