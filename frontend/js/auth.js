@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form) return;
 
   if (getToken()) {
-    window.location.href = '/chat';
+    window.location.href = 'chat.html';
     return;
   }
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       setAuth(data.token, data.user);
-      window.location.href = '/chat';
+      window.location.href = 'chat.html';
     } catch (error) {
       showAlert('auth-alert', error.message);
     } finally {
