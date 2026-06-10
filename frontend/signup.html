@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign up | AI Research Agent</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="auth-page">
   <div class="auth-card">
@@ -14,9 +14,7 @@
     </div>
     <h1>Create your account</h1>
     <p class="subtitle">Start exploring AI research with your personal agent.</p>
-
     <div id="auth-alert" class="alert alert-error" hidden></div>
-
     <form id="signup-form">
       <div class="input-group">
         <label for="name">Name</label>
@@ -32,38 +30,32 @@
       </div>
       <button class="btn btn-primary" type="submit" style="width: 100%;">Create account</button>
     </form>
-
-    <p class="auth-footer">Already have an account? <a href="/login">Log in</a></p>
+    <p class="auth-footer">Already have an account? <a href="login.html">Log in</a></p>
   </div>
-
-  <script src="/static/js/common.js"></script>
+  <script src="js/common.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('signup-form');
       if (getToken()) {
-        window.location.href = '/chat';
+        window.location.href = 'chat.html';
         return;
       }
-
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
-
         try {
           const payload = {
             name: form.name.value.trim(),
             email: form.email.value.trim(),
             password: form.password.value,
           };
-
           const data = await api('/api/auth/signup', {
             method: 'POST',
             body: JSON.stringify(payload),
           });
-
           setAuth(data.token, data.user);
-          window.location.href = '/chat';
+          window.location.href = 'chat.html';
         } catch (error) {
           showAlert('auth-alert', error.message);
         } finally {
