@@ -8,7 +8,6 @@ requests
 pinecone
 serpapi
 google-search-results
-sentence-transformers
 typing_extensions
 pandas
 fastapi
